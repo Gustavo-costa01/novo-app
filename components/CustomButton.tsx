@@ -1,13 +1,11 @@
 import React from "react";
 import { Text, TouchableOpacity } from "react-native";
 
-
-interface Props {
-    title: string;
+interface Props{
+    title: String
 }
-export default function CustomButton({title}: Props){
-
-    return (
+export default function CustomButton({title}:Props){
+    return(
         <TouchableOpacity>
             <Text>{title}</Text>
         </TouchableOpacity>

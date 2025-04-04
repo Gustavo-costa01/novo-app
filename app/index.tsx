@@ -1,23 +1,26 @@
-import CustomButton from "@/components/Title";
+import CustomButton from "@/components/CustomButton";
 import React, { useState } from "react";
 import { Button, Text, View } from "react-native";
 
-export default function Homescreen() {
-    const STARVALUE = 0;
-    const [count, setCount] = useState(STARVALUE);
-    
-
+export default function HomeScreebn(){
+    const [count, setCount] = useState(0);
     return (
-        <View>
-            <Text>Um exemplo de texto!</Text>   
-            <Text>Contador: {count}</Text>   
-            <Button title="Aumentar" onPress={() => {setCount(count + 1)}}/><br></br>   
-            <Button title="Diminuir" onPress={() => {setCount(count - 1)}}/><br></br>  
-            <Button title="reset" onPress={() => {setCount(STARVALUE)}}/><br></br>
-            
-            <CustomButton title="Name"/>
-
+        <View style={{backgroundColor: 'pink'}}>
+            <Text>{count}</Text>
+            <Button 
+            title="Aumentar"
+            onPress={() => {setCount(count+1)}}
+            />
+            <Button 
+            title="Dimunuir"
+            onPress={() => {setCount(count-1)}}
+            />
+            <Button
+            title="Reiniciar"
+            onPress={() => {setCount(count - count)}}
+            />
+            <CustomButton title="Teste"/>
         </View>
-         
     );
 }
+
