@@ -1,12 +1,16 @@
 import CustomButton from "@/components/CustomButton";
 import React, { useState } from "react";
-import { Button, Text, View } from "react-native";
+import { Form, TextInput, Button, Text, View } from "react-native";
 
 export default function HomeScreebn(){
+    const nome = "Gusta";
     const [count, setCount] = useState(0);
+    const [name, setName] = useState(nome)
     return (
-        <View style={{backgroundColor: 'pink'}}>
-            <Text>{count}</Text>
+        <View style={{flex: 1, justifyContent: "center", alignItems:"center"}}>
+            <Text> Bem vindo ao app, {name}!</Text>
+
+            <Text>contador : {count}</Text>
             <Button 
             title="Aumentar"
             onPress={() => {setCount(count+1)}}
@@ -19,7 +23,21 @@ export default function HomeScreebn(){
             title="Reiniciar"
             onPress={() => {setCount(count - count)}}
             />
-            <CustomButton title="Teste"/>
+
+            <TextInput placeholder="Digite algo" onChangeText={setName}/>
+         
+            <CustomButton title="Botão vermelho" onPress={() => {setName('Gusta ' + count)}}/>
+
+
+
+
+
+
+            <Form>
+            <TextInput placeholder="Digite algo" onChangeText={setCount}/>;
+            
+            </Form>
+
         </View>
     );
 }
